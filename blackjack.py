@@ -35,7 +35,10 @@ def deal(card, who):
 player, dealer = 'Player', 'Dealer'
 
 def play(deck):
+<<<<<<< HEAD
     global dealer_wins, player_wins
+=======
+>>>>>>> 66e4a0976384748a0314e52ac6b077248e6b8694
     '''Play a hand of BlackJack'''
     deal(deck.pop(), player)
     deal(deck.pop(), player)
@@ -45,7 +48,11 @@ def play(deck):
     while 'y' in input('You have ' + str(score(player)) + '. Hit?\n').lower():
         deal(deck.pop(), player)
         if bust(player):
+<<<<<<< HEAD
             print('Yeeeehah!', player, 'has', score(player), 'and went bust!')      
+=======
+            print('Yeeeehah!', player, 'has', score(player), 'and went bust!')
+>>>>>>> 66e4a0976384748a0314e52ac6b077248e6b8694
             dealer_wins += 1
             return 
 
@@ -60,7 +67,10 @@ def play(deck):
     
 
 def win(player, dealer):
+<<<<<<< HEAD
     global player_wins, dealer_wins
+=======
+>>>>>>> 66e4a0976384748a0314e52ac6b077248e6b8694
     player_score = score(player)
     dealer_score = score(dealer)
     print(player, player_score, 'and', dealer, dealer_score)
@@ -72,6 +82,7 @@ def win(player, dealer):
         dealer_wins += 1
 
 def print_wins(who):
+<<<<<<< HEAD
     wins, win = ' wins.',' win.'
     if who == 'Player':
         if player_wins > 1:
@@ -81,6 +92,12 @@ def print_wins(who):
         if dealer_wins > 1:
             return who + ' ' + str(dealer_wins) + wins
         return who + ' ' + str(dealer_wins) + win
+=======
+    if who == 'Player':
+        return 'Player ' + player_wins + ' wins.'
+    else:
+        return 'Dealer ' + dealer_wins + 'wins.'
+>>>>>>> 66e4a0976384748a0314e52ac6b077248e6b8694
 
 '''TAKING TURNS'''
 
@@ -100,7 +117,11 @@ while True:
         sql('UPDATE cards SET who == "DISCARD";')
         db.commit()
     
+<<<<<<< HEAD
     print('\nTally:', print_wins(player), print_wins(dealer))
+=======
+    print('\nTally:', print_wins(player), print(dealer))
+>>>>>>> 66e4a0976384748a0314e52ac6b077248e6b8694
     print('\n****Starting a NEW game****')
 
 
